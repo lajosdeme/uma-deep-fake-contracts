@@ -1,0 +1,310 @@
+{
+	"compiler": {
+		"version": "0.8.16+commit.07a7930e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "imageId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "imageUrl",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "asserter",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "assertionId",
+						"type": "bytes32"
+					}
+				],
+				"name": "ImageAsserted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "imageId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "imageUrl",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "asserter",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "assertionId",
+						"type": "bytes32"
+					}
+				],
+				"name": "ImageAssertionResolved",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "imageId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "string",
+						"name": "imageUrl",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "asserter",
+						"type": "address"
+					}
+				],
+				"name": "assertDataFor",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "assertionId",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "assertionId",
+						"type": "bytes32"
+					}
+				],
+				"name": "assertionDisputedCallback",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "assertionLiveness",
+				"outputs": [
+					{
+						"internalType": "uint64",
+						"name": "",
+						"type": "uint64"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "assertionId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bool",
+						"name": "assertedTruthfully",
+						"type": "bool"
+					}
+				],
+				"name": "assertionResolvedCallback",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "defaultCurrency",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "defaultIdentifier",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "assertionId",
+						"type": "bytes32"
+					}
+				],
+				"name": "getImage",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "oo",
+				"outputs": [
+					{
+						"internalType": "contract OptimisticOracleV3Interface",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/DeepFakeDetector.sol": "DeepFakeDetector"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [
+			":@openzeppelin/=lib/openzeppelin-contracts/",
+			":@uma/=lib/protocol/packages/",
+			":ds-test/=lib/forge-std/lib/ds-test/src/",
+			":forge-std/=lib/forge-std/src/"
+		]
+	},
+	"sources": {
+		"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x00c839ff53d07d19db2e7cfa1e5133f9ee90a8d64b0e2e57f50446a2d1a3a0e0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3dac621d015a68a5251b1e5d41dda0faf252699bf6e8bcf46a958b29964d9dd1",
+				"dweb:/ipfs/QmP9axjgZv4cezAhALoTemM62sdLtMDJ9MGTxECnNwHgSJ"
+			]
+		},
+		"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol": {
+			"keccak256": "0x35e258421ae206f3db37281cea70871b4c3553914734aa76139a41af60ac1abb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2ef94b6bc4ee356db612a1849c615f7dd4b15542d6c8584c86bb9243a7913cf0",
+				"dweb:/ipfs/QmaxFj5NFpAjjitZtHPNS9PPtCuBATaRz9ktDDRCQCQ83y"
+			]
+		},
+		"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol": {
+			"keccak256": "0x8a63ea9ec07788740e51046ca14c61f411aedb901e89749c9d55fa56ed43086a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3035ae3f172ed9e172e1ba4d83bdc70279f63be51ce9218c530132def66ff577",
+				"dweb:/ipfs/QmTQ3zfC3YUNeY3KUVFiHgTWDuxfmcEMgpGC6HMoTpgZJL"
+			]
+		},
+		"lib/openzeppelin-contracts/contracts/utils/Address.sol": {
+			"keccak256": "0xa6dfb97ce947b7c846b054ee7d45d12383359778f4f3743654ae0a34fa421b26",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b97e7e5a77ea47c08ba422291df887eba76c80982f52a6e94a30106e9377a94f",
+				"dweb:/ipfs/Qme7N2XRC7mcDxB8wZxNWPk6T8S2qsnmhAqXeUj4CNvsGD"
+			]
+		},
+		"lib/protocol/packages/core/contracts/common/implementation/AncillaryData.sol": {
+			"keccak256": "0x8ff33ac32d3e6de25de9e0ac2c0ff9a621f187fa97e9ee84092b327471baa3ce",
+			"license": "AGPL-3.0-only",
+			"urls": [
+				"bzz-raw://0bbaed49756e8cf7ef405e132f441cd7a735ac6186a200b0179147e7d137b74a",
+				"dweb:/ipfs/QmeSBJX5a61LZPxbkUKS2NF4LSxemgDwjD65fCAmyP7PX2"
+			]
+		},
+		"lib/protocol/packages/core/contracts/optimistic-oracle-v3/implementation/ClaimData.sol": {
+			"keccak256": "0xf8427cb144e47a47625df27e5182bd8f3774becf23d67fd16e51599bd1386bc5",
+			"license": "AGPL-3.0-only",
+			"urls": [
+				"bzz-raw://63d4212d86dfc755e5eead59e05038aaf889be3e9daee9fd9a8070825c7b8b8f",
+				"dweb:/ipfs/QmQ87qqtqhSQdfdEjT3wPGSitQ9uPoyYToVu9WTECqYsQP"
+			]
+		},
+		"lib/protocol/packages/core/contracts/optimistic-oracle-v3/interfaces/OptimisticOracleV3Interface.sol": {
+			"keccak256": "0x06c16f033cb100a20286b0f9c866a33a227a9e534544d5da6e5e20103d182d00",
+			"license": "AGPL-3.0-only",
+			"urls": [
+				"bzz-raw://a354805eab907d5e9e7910f66ef5c5c5594bb5144a77541d6d30c6cb3cbd6871",
+				"dweb:/ipfs/QmTfUDPJrsuUQ2aPwsbQwTaSvjUzBQFvFxXtmscZFymM4X"
+			]
+		},
+		"src/DeepFakeDetector.sol": {
+			"keccak256": "0xce5b10dec65feeaaff2ad5fd602ac43170d3dc84ba136c15e15836f3b4d474b7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://973a3876b7f46b8071436ef4b906480c90c6393912386f035f47c40ba5a0e76d",
+				"dweb:/ipfs/QmUMefRARyApfvEuLDurak6TmYZcMvx4TLTXF6tsPNLgwz"
+			]
+		}
+	},
+	"version": 1
+}

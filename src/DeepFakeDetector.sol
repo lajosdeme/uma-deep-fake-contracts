@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+pragma solidity 0.8.16;
 
 import "@uma/core/contracts/optimistic-oracle-v3/implementation/ClaimData.sol";
 import "@uma/core/contracts/optimistic-oracle-v3/interfaces/OptimisticOracleV3Interface.sol";
@@ -48,13 +48,13 @@ contract DeepFakeDetector {
     function getImage(
         bytes32 assertionId
     ) public view returns (bool, string memory) {
-        if (!imageAssertions[assertionId].resolved) return (false, 0);
+        if (!imageAssertions[assertionId].resolved) return (false, "");
         return (true, imageAssertions[assertionId].imageUrl);
     }
 
     function assertDataFor(
         bytes32 imageId,
-        string imageUrl,
+        string calldata imageUrl,
         address asserter
     ) public returns (bytes32 assertionId) {
         asserter = asserter == address(0) ? msg.sender : asserter;
@@ -87,11 +87,11 @@ contract DeepFakeDetector {
             bytes32(0)
         );
 
-        imageAssertions[assertionId] = ImageAsserted(
+        imageAssertions[assertionId] = ImageAssertion(
             imageId,
             imageUrl,
             asserter,
-            assertionId
+            false
         );
 
         emit ImageAsserted(imageId, imageUrl, asserter, assertionId);
